@@ -1,23 +1,22 @@
-// Ждем полной загрузки DOM
+// Ждем полной загрузки документа
 document.addEventListener('DOMContentLoaded', function() {
     // Обработчик для кнопки CTA
     const ctaButton = document.getElementById('cta-button');
-    
     if (ctaButton) {
         ctaButton.addEventListener('click', function() {
             alert('Спасибо за интерес к нашему сайту!');
-            
-            // Анимация кнопки
+
+            // Анимация кнопки при нажатии
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 150);
         });
     }
-    
+
     // Плавная прокрутка для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -28,20 +27,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Добавляем текущий год в футер
+
+    // Автоматическое обновление года в футере
     const currentYear = new Date().getFullYear();
     const yearElement = document.querySelector('footer p');
     if (yearElement) {
         yearElement.innerHTML = yearElement.innerHTML.replace('2024', currentYear);
     }
-    
-    // Анимация появления элементов при скролле
+
+    // Опции для наблюдателя анимации
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
+    // Создание наблюдателя для анимации появления
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
-    // Наблюдаем за элементами с анимацией
+
+    // Подключаем анимацию ко всем элементам .feature
     document.querySelectorAll('.feature').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
