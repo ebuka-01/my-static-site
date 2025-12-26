@@ -1,2 +1,19 @@
-# my-static-site
-testing
+# Мой статический сайт
+
+[![Deploy to GitHub Pages](https://github.com/ebuka-01/my-static-site/actions/workflows/deploy.yml/badge.svg)](https://github.com/ebuka-01/my-static-site/actions)
+
+Современный статический сайт, развернутый на GitHub Pages с использованием CI/CD.
+
+## 🚀 Особенности
+
+- ✅ Полностью статический
+- ✅ Адаптивный дизайн
+- ✅ Автоматическое развертывание через GitHub Actions
+- ✅ Бесплатный хостинг на GitHub Pages
+
+## 📱 Демо
+
+**Production URL:** https://ebuka-01.github.io/my-static-site/
+
+## 📁 Структура проекта
+
